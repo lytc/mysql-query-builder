@@ -1,4 +1,4 @@
-## MYSQL Query Builder
+## MySQL Query Builder
 
 ```php
 $select = new Qb\Select;
