@@ -68,7 +68,7 @@ class Update extends AbstractQuery
         }
 
         # from part
-        $parts[] = $this->_buildFromPart();
+        $parts[] = $this->_buildFromPart(false);
 
         # join part
         if ($this->_parts['join']) {
@@ -80,7 +80,7 @@ class Update extends AbstractQuery
         foreach ($values as $column => &$value) {
             $value = self::quoteIdentifier($column) . '=' . self::quote($value);
         }
-        $parts[] = 'SET ' . implode(', ', $value);
+        $parts[] = 'SET ' . implode(', ', $values);
 
         # where part
         if ($this->_parts['where']) {

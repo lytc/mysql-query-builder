@@ -24,7 +24,7 @@ trait From
     /**
      * @return String
      */
-    protected function _buildFromPart()
+    protected function _buildFromPart($fromPrefix = true)
     {
         $fromParts = [];
 
@@ -37,6 +37,6 @@ trait From
             $fromParts[] = $part;
         }
 
-        return "FROM " . implode(', ', $fromParts);
+        return ($fromPrefix? "FROM " : '') . implode(', ', $fromParts);
     }
 }
