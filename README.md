@@ -1,3 +1,5 @@
+## MYSQL Query Builder
+
 ```php
 $select = new Qb\Select;
 $select->from('foo f')
@@ -20,6 +22,6 @@ echo $update; // UPDATE `foo` SET `bar` = 1, `baz` = 2 WHERE id = 1
 
 ```php
 $delete = new Qb\Delete;
-$delete->from('foo')->where('id > ?', 2)->where('id < ?', 4)->limit(5);
+$delete->from('foo')->where('id > ? AND id < ?', 2, 4)->limit(5);
 echo $delete; // DELETE FROM `foo` WHERE id > 2 AND id < 4 LIMIT 5
 ```
