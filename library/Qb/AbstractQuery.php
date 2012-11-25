@@ -18,6 +18,11 @@ abstract class AbstractQuery
     protected static $_escapeCallback = 'addslashes';
 
     /**
+     * @var array
+     */
+    protected $_parts = [];
+
+    /**
      * @param $name
      * @return string
      */
@@ -133,11 +138,6 @@ abstract class AbstractQuery
     }
 
     /**
-     * @var array
-     */
-    protected $_parts           = [];
-
-    /**
      *
      */
     public function __construct()
@@ -146,7 +146,7 @@ abstract class AbstractQuery
     }
 
     /**
-     * @param String|Array $parts
+     * @param string|array $parts
      * @return Select
      * @throws Exception
      */
@@ -174,6 +174,41 @@ abstract class AbstractQuery
         }
 
         return $this;
+    }
+
+    /**
+     * @param array $driverOptions
+     * @return \PDOStatement
+     */
+    public function prepare(array $driverOptions = [])
+    {
+        $query = $this->__toString();
+        return Pdo::getInstance()->prepare($query, $driverOptions);
+    }
+
+    /**
+     * @param array $params
+     * @param array $driverOptions
+     * @return \PDOStatement
+     */
+    public function execute(array $params = [], array $driverOptions = [])
+    {
+        $bindParams = [];
+        foreach ($params as $key => $value) {
+            if (!is_numeric($key)) {
+                $key = ":$key";
+            }
+            $bindParams[$key] = $value;
+        }
+
+        $stmt = $this->prepare($driverOptions);
+        $stmt->execute($params);
+
+        ob_start();
+        $stmt->debugDumpParams();
+        Pdo::getInstance()->log(ob_get_clean());
+
+        return $stmt;
     }
 
     /**

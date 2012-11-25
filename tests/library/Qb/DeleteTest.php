@@ -50,4 +50,15 @@ class DeleteTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('DELETE LOW_PRIORITY QUICK IGNORE FROM `foo`', $delete->__toString());
     }
+
+    public function testExecute()
+    {
+        $delete = Query::delete('foo');
+
+        Pdo::getInstance()->beginTransaction();
+        $result = $delete->execute();
+        Pdo::getInstance()->rollBack();
+
+        $this->assertGreaterThanOrEqual(1, $result);
+    }
 }

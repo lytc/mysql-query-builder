@@ -20,7 +20,7 @@ class Insert extends AbstractQuery
     ];
 
     /**
-     * @param String $priority
+     * @param string $priority
      * @return Insert
      */
     protected function _priority($priority)
@@ -64,7 +64,7 @@ class Insert extends AbstractQuery
     }
 
     /**
-     * @param String $table
+     * @param string $table
      * @return Insert
      */
     public function into($table)
@@ -74,7 +74,7 @@ class Insert extends AbstractQuery
     }
 
     /**
-     * @param String|Array $columns
+     * @param string|array $columns
      * @return Insert
      */
     public function column($columns)
@@ -84,7 +84,7 @@ class Insert extends AbstractQuery
     }
 
     /**
-     * @param String|Array|Select $values
+     * @param string|array|Select $values
      * @return Insert
      */
     public function value($values)
@@ -94,7 +94,7 @@ class Insert extends AbstractQuery
     }
 
     /**
-     * @param Array $data
+     * @param array $data
      * @return Insert
      */
     public function onDuplicateKeyUpdate(array $data)
@@ -104,7 +104,7 @@ class Insert extends AbstractQuery
     }
 
     /**
-     * @return String
+     * @return string
      */
     protected function _build()
     {
@@ -171,5 +171,16 @@ class Insert extends AbstractQuery
         }
 
         return implode(' ', $parts);
+    }
+
+    /**
+     * @param array [$params]
+     * @param array [$driverOptions]
+     * @return string
+     */
+    public function execute(array $params = [], array $driverOptions = [])
+    {
+        parent::execute($params, $driverOptions);
+        return Pdo::getInstance()->lastInsertId();
     }
 }

@@ -86,4 +86,15 @@ class InsertTest extends \PHPUnit_Framework_TestCase
         $insert->into('foo f')->value(['foo' => 'foo', 'bar' => 'bar']);
         $this->assertEquals("INSERT `foo` `f` (`foo`, `bar`) VALUES ('foo', 'bar')", $insert->__toString());
     }
+
+    public function testExecute()
+    {
+        $insert = Query::insert('foo', ['name' => 'baz']);
+
+        Pdo::getInstance()->beginTransaction();
+        $result = $insert->execute();
+        Pdo::getInstance()->rollBack();
+
+        $this->assertTrue(is_numeric($result));
+    }
 }

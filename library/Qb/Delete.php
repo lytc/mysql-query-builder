@@ -55,7 +55,7 @@ class Delete extends AbstractQuery
     }
 
     /**
-     * @param String|Array|Arguments $tables
+     * @param string|array|Arguments $tables
      * @return Delete
      */
     public function table($tables)
@@ -71,7 +71,7 @@ class Delete extends AbstractQuery
     }
 
     /**
-     * @return String
+     * @return string
      */
     protected function _build()
     {
@@ -124,5 +124,16 @@ class Delete extends AbstractQuery
         }
 
         return implode(' ', $parts);
+    }
+
+    /**
+     * @param array $params
+     * @param array $driverOptions
+     * @return int
+     */
+    public function execute(array $params = [], array $driverOptions = [])
+    {
+        $stmt = parent::execute($params, $driverOptions);
+        return $stmt->rowCount();
     }
 }

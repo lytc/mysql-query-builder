@@ -5,7 +5,7 @@ namespace Qb\Part;
 trait From
 {
     /**
-     * @param String|Array|Arguments $tables
+     * @param string|array|Arguments $tables
      * @return Select
      */
     public function from($tables)
@@ -22,7 +22,7 @@ trait From
     }
 
     /**
-     * @return String
+     * @return string
      */
     protected function _buildFromPart($fromPrefix = true)
     {

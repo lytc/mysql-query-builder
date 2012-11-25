@@ -6,7 +6,8 @@ use Qb\Part\From,
     Qb\Part\Join,
     Qb\Part\Where,
     Qb\Part\OrderBy,
-    Qb\Part\Limit;
+    Qb\Part\Limit,
+    Qb\Pdo;
 
 /**
  *
@@ -55,7 +56,7 @@ class Select extends AbstractQuery
     }
 
     /**
-     * @param String $type
+     * @param string $type
      * @return Select
      */
     protected function _sizeResult($type)
@@ -89,7 +90,7 @@ class Select extends AbstractQuery
     }
 
     /**
-     * @param String $type
+     * @param string $type
      * @return Select
      */
     protected function _cache($type)
@@ -125,7 +126,7 @@ class Select extends AbstractQuery
     }
 
     /**
-     * @param String|Array $columns
+     * @param string|array $columns
      * @return Select
      */
     public function column($columns)
@@ -152,7 +153,7 @@ class Select extends AbstractQuery
     }
 
     /**
-     * @param String|Array|Arguments $conditions
+     * @param string|array|Arguments $conditions
      * @return Select
      */
     public function groupBy($conditions)
@@ -169,7 +170,7 @@ class Select extends AbstractQuery
     }
 
     /**
-     * @param String|Array $conditions
+     * @param string|array $conditions
      * @param Arguments [$params]
      * @return Select
      */
@@ -187,7 +188,7 @@ class Select extends AbstractQuery
     }
 
     /**
-     * @param String $into
+     * @param string $into
      * @return Select
      */
     public function into($into)
@@ -197,9 +198,9 @@ class Select extends AbstractQuery
     }
 
     /**
-     * @param String $fileName
-     * @param String [$charsetName]
-     * @param String [$options]
+     * @param string $fileName
+     * @param string [$charsetName]
+     * @param string [$options]
      * @return Select
      */
     public function intoOutFile($fileName, $charsetName = null, $options = null)
@@ -219,7 +220,7 @@ class Select extends AbstractQuery
     }
 
     /**
-     * @param String $fileName
+     * @param string $fileName
      * @return Select
      */
     public function intoDumpFile($fileName)
@@ -361,5 +362,91 @@ class Select extends AbstractQuery
         }
 
         return implode(' ', $parts);
+    }
+
+    /**
+     * @param int [$fetchStyle]
+     * @param array [$params]
+     * @return array
+     */
+    public function fetch($fetchStyle = null, array $params = [])
+    {
+        if (is_array($fetchStyle)) {
+            $params = $fetchStyle;
+            $fetchStyle = null;
+        }
+
+        if (null === $fetchStyle) {
+            $fetchStyle = Pdo::getFetchMode();
+        }
+
+        return $this->execute($params)->fetch($fetchStyle);
+    }
+
+    /**
+     * @param int [$fetchStyle]
+     * @param array [$params]
+     * @return array
+     */
+    public function fetchAll($fetchStyle = null, array $params = [])
+    {
+        if (is_array($fetchStyle)) {
+            $params = $fetchStyle;
+            $fetchStyle = null;
+        }
+
+        if (null === $fetchStyle) {
+            $fetchStyle = Pdo::getFetchMode();
+        }
+
+        return $this->execute($params)->fetchAll($fetchStyle);
+    }
+
+    /**
+     * @param int|array [$col=0]
+     * @param array [$params]
+     * @return array|bool
+     */
+    public function fetchCol($col = 0, array $params = [])
+    {
+        if (is_array($col)) {
+            $params = $col;
+            $col = 0;
+        }
+
+        $rows = $this->fetchAll(Pdo::FETCH_BOTH, $params);
+
+        if (!$rows) {
+            return false;
+        }
+
+        $result = [];
+
+        foreach ($rows as $row) {
+            $result[] = $row[$col];
+        }
+
+        return $result;
+    }
+
+    /**
+     * @param int|array [$col=0]
+     * @param array [$params]
+     * @return null
+     */
+    public function fetchCell($col = 0, array $params = [])
+    {
+        if (is_array($col)) {
+            $params = $col;
+            $col = 0;
+        }
+
+        $row = $this->fetch(Pdo::FETCH_BOTH, $params);
+
+        if (!$row) {
+            return null;
+        }
+
+        return $row[$col];
     }
 }

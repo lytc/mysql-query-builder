@@ -99,4 +99,15 @@ class Update extends AbstractQuery
 
         return implode(' ', $parts);
     }
+
+    /**
+     * @param array $params
+     * @param array $driverOptions
+     * @return int
+     */
+    public function execute(array $params = [], array $driverOptions = [])
+    {
+        $stmt = parent::execute($params, $driverOptions);
+        return $stmt->rowCount();
+    }
 }

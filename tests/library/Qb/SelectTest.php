@@ -510,4 +510,42 @@ class SelectTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($expected, $select->__toString());
     }
+
+    public function testFetch()
+    {
+        $result = Query::select('foo')->fetch();
+        $this->assertArrayHasKey('id', $result);
+
+        $result = Query::select('foo')->fetch(Pdo::FETCH_OBJ);
+        $this->assertObjectHasAttribute('id', $result);
+
+
+        $result = Query::select('foo')->fetch(Pdo::FETCH_OBJ);
+        $this->assertObjectHasAttribute('id', $result);
+
+        $result = Query::select('foo')->where('id = :id')->fetch(['id' => 1]);
+        $this->assertArrayHasKey('id', $result);
+    }
+
+    public function testFetchAll()
+    {
+        $result = Query::select('foo')->fetchAll();
+        $this->assertInternalType('array', $result);
+    }
+
+    public function testFetchCol()
+    {
+        $result = Query::select('foo')->fetchCol(1);
+        $this->assertInternalType('array', $result);
+        $this->assertContains('foo', $result);
+
+        $result = Query::select('foo')->fetchCol('name');
+        $this->assertContains('foo', $result);
+    }
+
+    public function testFetchCell()
+    {
+        $result = Query::select('foo')->fetchCell(1);
+        $this->assertEquals('foo', $result);
+    }
 }

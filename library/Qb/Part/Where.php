@@ -5,7 +5,7 @@ namespace Qb\Part;
 trait Where
 {
     /**
-     * @param String|Array $conditions
+     * @param string|array $conditions
      * @param Arguments [$params]
      * @return Select
      */
@@ -23,7 +23,7 @@ trait Where
     }
 
     /**
-     * @return String
+     * @return string
      */
     protected function _buildWherePart()
     {

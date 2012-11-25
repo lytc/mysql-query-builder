@@ -5,9 +5,9 @@ namespace Qb\Part;
 trait Join
 {
     /**
-     * @param String $type
-     * @param String $table
-     * @param String [$conditions]
+     * @param string $type
+     * @param string $table
+     * @param string [$conditions]
      * @return Select
      */
     protected function _join($type, $table, $conditions = null)
@@ -17,8 +17,8 @@ trait Join
     }
 
     /**
-     * @param String $table
-     * @param String [$conditions]
+     * @param string $table
+     * @param string [$conditions]
      * @return Select
      */
     public function innerJoin($table, $conditions = null)
@@ -27,8 +27,8 @@ trait Join
     }
 
     /**
-     * @param String $table
-     * @param String [$conditions]
+     * @param string $table
+     * @param string [$conditions]
      * @return Select
      */
     public function straightJoin($table, $conditions = null)
@@ -37,8 +37,8 @@ trait Join
     }
 
     /**
-     * @param String $table
-     * @param String $conditions
+     * @param string $table
+     * @param string $conditions
      * @return Select
      */
     public function leftJoin($table, $conditions)
@@ -47,8 +47,8 @@ trait Join
     }
 
     /**
-     * @param String $table
-     * @param String $conditions
+     * @param string $table
+     * @param string $conditions
      * @return Select
      */
     public function rightJoin($table, $conditions)
@@ -57,8 +57,8 @@ trait Join
     }
 
     /**
-     * @param String $table
-     * @param String $conditions
+     * @param string $table
+     * @param string $conditions
      * @return Select
      */
     public function leftOuterJoin($table, $conditions)
@@ -67,8 +67,8 @@ trait Join
     }
 
     /**
-     * @param String $table
-     * @param String $conditions
+     * @param string $table
+     * @param string $conditions
      * @return Select
      */
     public function rightOuterJoin($table, $conditions)
@@ -77,7 +77,7 @@ trait Join
     }
 
     /**
-     * @param String $table
+     * @param string $table
      * @return Select
      */
     public function naturalJoin($table)
@@ -86,7 +86,7 @@ trait Join
     }
 
     /**
-     * @param String $table
+     * @param string $table
      * @return Select
      */
     public function naturalLeftJoin($table)
@@ -95,7 +95,7 @@ trait Join
     }
 
     /**
-     * @param String $table
+     * @param string $table
      * @return Select
      */
     public function naturalRightJoin($table)
@@ -104,7 +104,7 @@ trait Join
     }
 
     /**
-     * @param String $table
+     * @param string $table
      * @return Select
      */
     public function naturalLeftOuterJoin($table)
@@ -113,7 +113,7 @@ trait Join
     }
 
     /**
-     * @param String $table
+     * @param string $table
      * @return Select
      */
     public function naturalRightOuterJoin($table)
@@ -122,7 +122,7 @@ trait Join
     }
 
     /**
-     * @return String
+     * @return string
      */
     protected function _buildJoinPart()
     {

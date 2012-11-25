@@ -1,0 +1,290 @@
+SQL: [17] DELETE FROM `foo`
+Params:  0
+SQL: [36] INSERT `foo` (`name`) VALUES ('baz')
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [34] SELECT * FROM `foo` WHERE id > :id
+Params:  1
+Key: Name: [3] :id
+paramno=-1
+name=[3] ":id"
+is_param=1
+param_type=2
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [29] UPDATE `foo` SET `name`='qux'
+Params:  0
+SQL: [17] DELETE FROM `foo`
+Params:  0
+SQL: [36] INSERT `foo` (`name`) VALUES ('baz')
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [34] SELECT * FROM `foo` WHERE id > :id
+Params:  1
+Key: Name: [3] :id
+paramno=-1
+name=[3] ":id"
+is_param=1
+param_type=2
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [29] UPDATE `foo` SET `name`='qux'
+Params:  0
+SQL: [17] DELETE FROM `foo`
+Params:  0
+SQL: [36] INSERT `foo` (`name`) VALUES ('baz')
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [34] SELECT * FROM `foo` WHERE id = :id
+Params:  1
+Key: Name: [3] :id
+paramno=-1
+name=[3] ":id"
+is_param=1
+param_type=2
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [29] UPDATE `foo` SET `name`='qux'
+Params:  0
+SQL: [17] DELETE FROM `foo`
+Params:  0
+SQL: [36] INSERT `foo` (`name`) VALUES ('baz')
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [34] SELECT * FROM `foo` WHERE id = :id
+Params:  1
+Key: Name: [3] :id
+paramno=-1
+name=[3] ":id"
+is_param=1
+param_type=2
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [29] UPDATE `foo` SET `name`='qux'
+Params:  0
+SQL: [17] DELETE FROM `foo`
+Params:  0
+SQL: [36] INSERT `foo` (`name`) VALUES ('baz')
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [34] SELECT * FROM `foo` WHERE id = :id
+Params:  1
+Key: Name: [3] :id
+paramno=-1
+name=[3] ":id"
+is_param=1
+param_type=2
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [29] UPDATE `foo` SET `name`='qux'
+Params:  0
+SQL: [17] DELETE FROM `foo`
+Params:  0
+SQL: [36] INSERT `foo` (`name`) VALUES ('baz')
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [34] SELECT * FROM `foo` WHERE id = :id
+Params:  1
+Key: Name: [3] :id
+paramno=-1
+name=[3] ":id"
+is_param=1
+param_type=2
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [29] UPDATE `foo` SET `name`='qux'
+Params:  0
+SQL: [17] DELETE FROM `foo`
+Params:  0
+SQL: [36] INSERT `foo` (`name`) VALUES ('baz')
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [34] SELECT * FROM `foo` WHERE id = :id
+Params:  1
+Key: Name: [3] :id
+paramno=-1
+name=[3] ":id"
+is_param=1
+param_type=2
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [29] UPDATE `foo` SET `name`='qux'
+Params:  0
+SQL: [17] DELETE FROM `foo`
+Params:  0
+SQL: [36] INSERT `foo` (`name`) VALUES ('baz')
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [29] UPDATE `foo` SET `name`='qux'
+Params:  0
+SQL: [17] DELETE FROM `foo`
+Params:  0
+SQL: [36] INSERT `foo` (`name`) VALUES ('baz')
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [34] SELECT * FROM `foo` WHERE id = :id
+Params:  1
+Key: Name: [3] :id
+paramno=-1
+name=[3] ":id"
+is_param=1
+param_type=2
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [29] UPDATE `foo` SET `name`='qux'
+Params:  0
+SQL: [17] DELETE FROM `foo`
+Params:  0
+SQL: [36] INSERT `foo` (`name`) VALUES ('baz')
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [34] SELECT * FROM `foo` WHERE id = :id
+Params:  1
+Key: Name: [3] :id
+paramno=-1
+name=[3] ":id"
+is_param=1
+param_type=2
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [29] UPDATE `foo` SET `name`='qux'
+Params:  0
+SQL: [17] DELETE FROM `foo`
+Params:  0
+SQL: [36] INSERT `foo` (`name`) VALUES ('baz')
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [34] SELECT * FROM `foo` WHERE id = :id
+Params:  1
+Key: Name: [3] :id
+paramno=-1
+name=[3] ":id"
+is_param=1
+param_type=2
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [19] SELECT * FROM `foo`
+Params:  0
+SQL: [29] UPDATE `foo` SET `name`='qux'
+Params:  0

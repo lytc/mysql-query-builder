@@ -5,8 +5,8 @@ namespace Qb\Part;
 trait Limit
 {
     /**
-     * @param Int $limit
-     * @param Int [$offset]
+     * @param int $limit
+     * @param int [$offset]
      * @return Select
      */
     public function limit($limit, $offset = null)
@@ -21,7 +21,7 @@ trait Limit
     }
 
     /**
-     * @param Int $offset
+     * @param int $offset
      * @return Select
      */
     public function offset($offset)
@@ -31,7 +31,7 @@ trait Limit
     }
 
     /**
-     * @return String
+     * @return string
      */
     protected function _buildLimitPart()
     {

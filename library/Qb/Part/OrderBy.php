@@ -5,7 +5,7 @@ namespace Qb\Part;
 trait OrderBy
 {
     /**
-     * @param String|Array|Arguments $conditions
+     * @param string|array|Arguments $conditions
      * @return Select
      */
     public function orderBy($conditions)
@@ -22,7 +22,7 @@ trait OrderBy
     }
 
     /**
-     * @return String
+     * @return string
      */
     protected function _buildOrderByPart()
     {

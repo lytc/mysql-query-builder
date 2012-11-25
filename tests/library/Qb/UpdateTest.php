@@ -12,4 +12,15 @@ class UpdateTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals("UPDATE `foo` SET `foo`=1, `bar`='bar'", $update->__toString());
     }
+
+    public function testExecute()
+    {
+        $update = Query::update('foo', ['name' => 'qux']);
+
+        Pdo::getInstance()->beginTransaction();
+        $result = $update->execute();
+        Pdo::getInstance()->rollBack();
+
+        $this->assertGreaterThanOrEqual(1, $result);
+    }
 }
